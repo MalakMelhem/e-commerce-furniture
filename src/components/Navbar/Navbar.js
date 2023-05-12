@@ -11,7 +11,6 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import { NavLink } from 'react-router-dom';
 import style from './Navbar.module.css';
 import MuiDrawer from '../MuiDrawer/MuiDrawer';
-import NavbarSearch from '../NavbarSearch/NavbarSearch';
 import {useNavigate} from "react-router-dom";
 
 const Navbar = () => {
@@ -35,7 +34,6 @@ function PrimarySearchAppBar() {
                         <NavLink to="/">About</NavLink>
                         <NavLink to="/">Contact</NavLink>
                     </Box>
-                    <NavbarSearch />
                     <Box sx={{ display: { xs: 'none', md: 'flex' }, color: "#000000", mr: 6 }}>
                         <IconButton size="large"
                             aria-label="account of current user"
