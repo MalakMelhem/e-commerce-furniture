@@ -1,19 +1,20 @@
 import React from 'react';
 import style from './NewArrivals.module.css';
 import img from './naImg/Asgaard-sofa1.png'
-
+import { Box } from '@mui/material';
+import Typography from '@mui/material/Typography';
 const NewArrivals = () => {
   return (
-    <div className={style.newArrivals}>
-        <div className={style.imgContainer}>
-            <img  src={img}/>
-        </div>
-        <div className={style.content}>
-            <h3>New Arrivals</h3>
-            <h2>Asgaard sofa</h2>
+    <Box className={style.newArrivals}>
+        <Box className={style.imgContainer}>
+            <img  src={img} alt="a furniture image"/>
+        </Box>
+        <Box className={style.content}>
+            <Typography component="h3">New Arrivals</Typography>
+            <Typography component="h2">Asgaard sofa</Typography>
             <button>Order Now</button>
-        </div>
-    </div>
+        </Box>
+    </Box>
   )
 }
 export default NewArrivals;

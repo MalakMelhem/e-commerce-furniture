@@ -5,6 +5,7 @@ import CoreLinkBtn from '../CoreLinkBtn/CoreLinkBtn';
 import PostCard from '../PostCard/PostCard';
 import { useState } from 'react';
 import blogsData from './blogsData';
+import { Box } from '@mui/material';
 
 const ThreeBlogs = blogsData.slice(0, 3);
 const Blogs = () => {
@@ -13,11 +14,11 @@ const Blogs = () => {
     setIsExpanded(!isExpanded);
   };
   return (
-    <div className={style.blogs}>
-        <div>
+    <Box className={style.blogs}>
+        <Box>
             <SectionHeading title="Our Blogs" desc="Find a bright ideal to suit your taste with our great selection" />
-        </div>
-        <div className={style.content}>
+        </Box>
+        <Box className={style.content}>
         {isExpanded ? (
           <>
             {blogsData.map((blog)=>(<PostCard key={blog.id} {...blog}/>))}
@@ -28,11 +29,11 @@ const Blogs = () => {
           </>
         )}
             
-        </div>
-        <div className={style.tail}>
+        </Box>
+        <Box className={style.tail}>
             <CoreLinkBtn to="/" text={isExpanded ? 'View Less' : 'View All Post'} onClick={toggleExpand}/>
-        </div>
-    </div>
+        </Box>
+    </Box>
   )
 }
 

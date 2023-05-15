@@ -1,15 +1,16 @@
 import React from 'react';
 import style from './ContactBanner.module.css';
-
+import { Box } from '@mui/material';
+import Typography from '@mui/material/Typography';
 const ContactBanner = () => {
   return (
-    <div className={style.contactBanner}>
-        <div className={style.content}>
-            <h2>Our Instagram</h2>
-            <p>Follow our store on Instagram</p>
-        </div>
+    <Box className={style.contactBanner}>
+        <Box className={style.content}>
+            <Typography component="h2">Our Instagram</Typography>
+            <Typography component="p">Follow our store on Instagram</Typography>
+        </Box>
         <button>Follow Us</button>
-    </div>
+    </Box>
   )
 }
 
