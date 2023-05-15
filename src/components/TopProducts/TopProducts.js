@@ -4,9 +4,23 @@ import CoreLinkBtn from '../CoreLinkBtn/CoreLinkBtn';
 import FurnitureCard from '../FurnitureCard/FurnitureCard';
 import SectionHeading from '../SectionHeading/SectionHeading';
 import { Box } from '@mui/material';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 const TopProducts = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [products, setProducts] = useState(null);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://run.mocky.io/v3/41c31119-7cc8-4842-827f-f6a50fbe2cf5'); 
+        const jsonData = await response.json();
+        setProducts(jsonData);
+      } catch (error) {
+        console.log('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const toggleExpand = (e) => {
     e.preventDefault();
@@ -21,26 +35,12 @@ const TopProducts = () => {
       <Box className={style.content}>
 
         {isExpanded ? (
-          <>
-            <FurnitureCard title="Trenton modular sofa_3" price="Rs. 25,000.00" />
-            <FurnitureCard title="Trenton modular sofa_3" price="Rs. 25,000.00" />
-            <FurnitureCard title="Trenton modular sofa_3" price="Rs. 25,000.00" />
-            <FurnitureCard title="Trenton modular sofa_3" price="Rs. 25,000.00" />
-            <FurnitureCard title="Trenton modular sofa_3" price="Rs. 25,000.00" />
-            <FurnitureCard title="Trenton modular sofa_3" price="Rs. 25,000.00" />
-            <FurnitureCard title="Trenton modular sofa_3" price="Rs. 25,000.00" />
-            <FurnitureCard title="Trenton modular sofa_3" price="Rs. 25,000.00" />
-            <FurnitureCard title="Trenton modular sofa_3" price="Rs. 25,000.00" />
-            <FurnitureCard title="Trenton modular sofa_3" price="Rs. 25,000.00" />
-            <FurnitureCard title="Trenton modular sofa_3" price="Rs. 25,000.00" />
-            <FurnitureCard title="Trenton modular sofa_3" price="Rs. 25,000.00" />
+          <> 
+          {products? products.map(product=>(<FurnitureCard key={product.id} {...product} />)):<p>Loading...</p> }
           </>
         ) : (
           <>
-            <FurnitureCard title="Trenton modular sofa_3" price="Rs. 25,000.00" />
-            <FurnitureCard title="Trenton modular sofa_3" price="Rs. 25,000.00" />
-            <FurnitureCard title="Trenton modular sofa_3" price="Rs. 25,000.00" />
-            <FurnitureCard title="Trenton modular sofa_3" price="Rs. 25,000.00" />
+            {products? products.slice(0, 4).map(product=>(<FurnitureCard key={product.id} {...product} />)):<p>Loading...</p> }
           </>
         )}
       </Box>
