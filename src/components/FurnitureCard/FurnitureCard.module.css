@@ -1,0 +1,42 @@
+.furnitureCard{
+}
+@media only screen and (max-width: 1218px) {
+    .furnitureCard{
+      width: 40%;
+    }
+  }
+  @media only screen and (max-width: 619px) {
+    .furnitureCard{
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }  
+  @media only screen and (max-width: 472px) {
+    .furnitureCard{
+      width: 100%;
+      flex-direction: column;
+    }
+  }  
+.imgContainer{
+
+}
+.imgContainer img{
+    height: 287px;
+    width: 287px;
+    display: inline-block;
+}
+.description{
+    text-align: left;
+
+}
+.description h4{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.description h3{
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+}
