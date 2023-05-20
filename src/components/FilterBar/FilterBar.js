@@ -40,13 +40,8 @@ const handleLimiting=(event)=>{
   console.log(dataLimited.slice(0, event.target.value));
 }
 
-const handleToggleToSolo = () => {
-  if(!isViewSolo)
-   setIsViewSolo(!isViewSolo);
-};
-const handleToggleToGrid = () => {
-  if(isViewSolo)
-   setIsViewSolo(!isViewSolo);
+const handleToggle = (value) => {
+  setIsViewSolo(value);
 };
   const classes = useStyles();
   return (
@@ -57,8 +52,8 @@ const handleToggleToGrid = () => {
             <Menu id="basic-menu" className={classes.menu} anchorEl={anchorEl} open={open} onClose={handleClose} MenuListProps={{'aria-labelledby': 'basic-button', }}>
               <FilterMenu />
             </Menu>
-            <Tooltip title="View grid"><IconButton onClick={handleToggleToGrid}><GridViewRoundedIcon className={style.icon}/></IconButton></Tooltip>
-            <Tooltip title="View List"><IconButton onClick={handleToggleToSolo}><ViewDayOutlinedIcon className={style.icon}/></IconButton></Tooltip>
+            <Tooltip title="View grid"><IconButton onClick={()=>handleToggle(false)}><GridViewRoundedIcon className={style.icon}/></IconButton></Tooltip>
+            <Tooltip title="View List"><IconButton onClick={()=>handleToggle(true)}><ViewDayOutlinedIcon className={style.icon}/></IconButton></Tooltip>
           </Box>
           <Box className={style.resultDesc}>
            {data.length? <p>Showing 1–{data.length} of 30 results</p>: <p>No results</p>}
