@@ -13,6 +13,7 @@ import { useState,useContext} from 'react';
 import {dataContext,viewContext} from '../ShoppingProducts/ShoppingProducts';
 import { Box } from '@mui/material';
 import Typography from '@mui/material/Typography';
+import Tooltip from '@mui/material/Tooltip';
 
 const FilterBar = () => {
 
@@ -56,8 +57,8 @@ const handleToggleToGrid = () => {
             <Menu id="basic-menu" className={classes.menu} anchorEl={anchorEl} open={open} onClose={handleClose} MenuListProps={{'aria-labelledby': 'basic-button', }}>
               <FilterMenu />
             </Menu>
-            <IconButton onClick={handleToggleToGrid}><GridViewRoundedIcon className={style.icon}/></IconButton>
-            <IconButton onClick={handleToggleToSolo}><ViewDayOutlinedIcon className={style.icon}/></IconButton> 
+            <Tooltip title="View grid"><IconButton onClick={handleToggleToGrid}><GridViewRoundedIcon className={style.icon}/></IconButton></Tooltip>
+            <Tooltip title="View List"><IconButton onClick={handleToggleToSolo}><ViewDayOutlinedIcon className={style.icon}/></IconButton></Tooltip>
           </Box>
           <Box className={style.resultDesc}>
            {data.length? <p>Showing 1–{data.length} of 30 results</p>: <p>No results</p>}
