@@ -34,8 +34,8 @@ const FilterBar = () => {
   const handleChange = (event) => {
     setLimit(event.target.value);
   };
+  
 const handleLimiting=(event)=>{
-  // if(event.target.value<data.length)
   setData(dataLimited.slice(0, event.target.value));
   console.log(dataLimited.slice(0, event.target.value));
 }

@@ -1,15 +1,10 @@
 .productsContainer{
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     margin: 3em 5em;
     flex-wrap: wrap;
 }
-@media only screen and (max-width: 1308px) {
-    .productsContainer {
-        justify-content: space-between;
-    }
 
-  }
 .viewSoloProduct{
     flex-direction: column;
     align-items: center;
