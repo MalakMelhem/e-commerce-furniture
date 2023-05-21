@@ -8,10 +8,14 @@ import useStyles from './basicSelectStyle';
 import { useState, useContext } from 'react';
 import {dataContext} from '../ShoppingProducts/ShoppingProducts';
 
+
 export default function BasicSelect() {
+
   const [sortingType, setSortingType] = useState('');
   const [data, setData] = useContext(dataContext);
   let sortedProducts =[...data];
+
+  const MenuItemData=[{value:"rating-high-to-low",text:"Rating:High to Low"},{value:"rating-low-to-high",text:"Rating:Low to High"},{value:"price-low-to-high",text:"Price: Low to High"},{value:"price-high-to-low",text:"Price: High to Low"}];
 
   const handleChange = (event) => {
     setSortingType(event.target.value);
@@ -37,10 +41,9 @@ export default function BasicSelect() {
           value={sortingType}
           onChange={handleChange}
         >
-          <MenuItem value="rating-high-to-low">Rating:High to Low</MenuItem>
-          <MenuItem value="rating-low-to-high">Rating:Low to High</MenuItem>
-          <MenuItem value="price-low-to-high">Price: Low to High</MenuItem>
-          <MenuItem value="price-high-to-low">Price: High to Low</MenuItem>
+          {MenuItemData.map((item,index)=>(
+            <MenuItem key={index} value={item.value}>{item.text}</MenuItem>
+            ))}
         </Select>
       </FormControl>
     </Box>
