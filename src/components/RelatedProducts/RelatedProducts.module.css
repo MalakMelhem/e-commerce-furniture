@@ -1,0 +1,15 @@
+.relatedProducts{
+    margin: 2em 5em 5em;  
+}
+.relatedProducts .container{
+     display: flex;
+     /* justify-content: space-between; */
+     flex-wrap: wrap;
+}
+
+.relatedProducts .tail{
+    width: fit-content;
+    margin: auto;
+    margin-top: 3em;
+
+}

@@ -3,6 +3,7 @@ import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import Shop  from "./pages/Shop";
 import React from 'react';
+import SingleProduct from "./pages/SingleProduct";
 
 const Router = () => {
   return (
@@ -11,7 +12,7 @@ const Router = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />  
           <Route path="shop" element={<Shop />} />
-          {/* <Route path="singleProduct/:id" element={<SingleProduct />} /> */}
+          <Route path="singleProduct/:productId" element={<SingleProduct />} />
           {/* <Route path="myAccount" element={<MyAccount />} /> */}
           {/* <Route path="cart" element={<Cart />} /> */}
           {/* <Route path="*" element={<NoPage />} /> */}

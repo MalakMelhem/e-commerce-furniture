@@ -12,6 +12,7 @@ import { NavLink } from 'react-router-dom';
 import style from './Navbar.module.css';
 import MuiDrawer from '../MuiDrawer/MuiDrawer';
 import {useNavigate} from "react-router-dom";
+import CartSidebar from '../CartSidebar/CartSidebar';
 
 const Navbar = () => {
     return (
@@ -54,16 +55,7 @@ function PrimarySearchAppBar() {
                         >
                             <FavoriteBorderOutlinedIcon />
                         </IconButton>
-                        <IconButton
-                            size="large"
-                            color="inherit"
-                            edge="end"
-                            onClick={()=>navigate("/")}
-                        >
-                            <Badge badgeContent={1} color="error">
-                                <ShoppingCartOutlinedIcon />
-                            </Badge>
-                        </IconButton>
+                        <CartSidebar />
                     </Box>
                 </Toolbar>
             </AppBar>
