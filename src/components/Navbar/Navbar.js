@@ -30,7 +30,7 @@ function PrimarySearchAppBar() {
                     <MuiDrawer />
                     <Box component="div" className={style.navlink} sx={{ display: { xs: 'none', md: 'flex ' } }}>
                         <NavLink to="/">Home</NavLink>
-                        <NavLink to="/">Shop</NavLink>
+                        <NavLink to="/shop">Shop</NavLink>
                         <NavLink to="/">About</NavLink>
                         <NavLink to="/">Contact</NavLink>
                     </Box>
