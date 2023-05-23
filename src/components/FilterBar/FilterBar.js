@@ -37,7 +37,6 @@ const FilterBar = () => {
   
 const handleLimiting=(event)=>{
   setData(dataLimited.slice(0, event.target.value));
-  console.log(dataLimited.slice(0, event.target.value));
 }
 
 const handleToggle = (value) => {
