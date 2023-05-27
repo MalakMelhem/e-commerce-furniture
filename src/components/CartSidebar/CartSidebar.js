@@ -9,10 +9,12 @@ import IconButton from '@mui/material/IconButton';
 import { Divider, Drawer, Typography } from "@material-ui/core";
 import CoreSmallBtn from '../CoreSmallBtn/CoreSmallBtn';
 import { CartContext } from '../CartContext/CartContext';
+import {useNavigate} from "react-router-dom";
 
 const CartSidebar = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const { cartItems, calculateTotal } = useContext(CartContext);
+    const navigate = useNavigate();
 
     const classes=useStyles();
   return (
@@ -44,7 +46,7 @@ const CartSidebar = () => {
                 </Box>
                   <Divider />
                 <Box className={classes.btns}>
-                  <CoreSmallBtn text="View Cart"/>
+                  <CoreSmallBtn text="View Cart" onClick={()=>navigate('/cart')}/>
                   <CoreSmallBtn text="Checkout"/>
                 </Box>
               </Box>
