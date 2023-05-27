@@ -6,9 +6,9 @@ const SectionHeading = ({title,desc}) => {
   return (
     <Box className={style.headerTitles}>
         <Typography component="h2">{title}</Typography>
-        <Typography component="p">{desc}</Typography>
+        {desc?<Typography component="p">{desc}</Typography>: null}
     </Box>
-  )
+  );
 }
 
 export default SectionHeading;
