@@ -11,7 +11,7 @@ const FurnitureCard = ({id,name,price,items}) => {
   return (
     <Box className={style.furnitureCard}>
       <Box className={style.imgContainer}>
-        <img src={items[0]} alt={name}  onClick={()=>navigate("/")}/>
+        <img src={items[0]} alt={name}  onClick={()=>navigate(`/singleProduct/${id}`)}/>
       </Box>
       <Box className={style.description}>
         <Typography component="h4">{name}</Typography>
