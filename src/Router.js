@@ -5,6 +5,9 @@ import Shop  from "./pages/Shop";
 import React from 'react';
 import SingleProduct from "./pages/SingleProduct";
 import Cart from './pages/Cart';
+import MyAccount from "./pages/MyAccount";
+import LostPassword from "./pages/LostPassword";
+import NoPage from "./pages/NoPage";
 
 const Router = () => {
   return (
@@ -14,13 +17,14 @@ const Router = () => {
           <Route index element={<Home />} />  
           <Route path="shop" element={<Shop />} />
           <Route path="singleProduct/:productId" element={<SingleProduct />} />
-          {/* <Route path="myAccount" element={<MyAccount />} /> */}
+          <Route path="my-account" element={<MyAccount />} />
           <Route path="cart" element={<Cart />} />
-          {/* <Route path="*" element={<NoPage />} /> */}
+          <Route path="lost-password" element={<LostPassword />} />
+          <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
 export default Router;
