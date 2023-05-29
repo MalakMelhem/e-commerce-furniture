@@ -1,15 +1,21 @@
-import React,{useContext } from 'react';
+import React,{useContext,useState } from 'react';
 import IconButton from '@mui/material/IconButton';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography,Snackbar  } from '@mui/material';
 import useStyles from './CartedProductStyle';
 import { CartContext } from '../CartContext/CartContext';
 
 const CartedProduct = ({product}) => {
   const { removeFromCart } = useContext(CartContext);
+  const [isSnackbarOpen, setIsSnackbarOpen] = useState(false);
 
   const handleRemoveFromCart = (productId) => {
     removeFromCart(productId);
+    setIsSnackbarOpen(true);
+  };
+
+  const handleSnackbarClose = () => {
+    setIsSnackbarOpen(false);
   };
 
     const classes = useStyles(); 
@@ -27,6 +33,13 @@ const CartedProduct = ({product}) => {
             <HighlightOffIcon />
         </IconButton>
        </Box>
+       <Snackbar
+            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+            open={isSnackbarOpen}
+            autoHideDuration={2000}
+            onClose={handleSnackbarClose}
+            message="Item Removed From Cart!"
+         />
     </Box>
   );
 }
