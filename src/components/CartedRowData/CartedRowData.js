@@ -1,8 +1,8 @@
-import { Box, Typography,TextField } from '@mui/material';
+import { Box, Typography,TextField,Snackbar } from '@mui/material';
 import React,{useState,useContext} from 'react';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
-import img from '../CartedProduct/cpImg/Asgaardsofa5.png'
+import img from '../CartedProduct/cpImg/Asgaardsofa5.png';
 import useStyles from './CartedRowDataStyle';
 import { CartContext } from '../CartContext/CartContext';
 
@@ -10,6 +10,7 @@ const CartedRowData = ({product}) => {
     const [value,setValue]=useState(product.quantity);
     const { removeFromCart,calculateSubtotal , updateQuantity} = useContext(CartContext);
     const subtotal=calculateSubtotal(product);
+    const [isSnackbarOpen, setIsSnackbarOpen] = useState(false);
 
     const handleQuantityChange = (productId,quantity) => {
         updateQuantity(productId,quantity);
@@ -17,6 +18,11 @@ const CartedRowData = ({product}) => {
 
     const handleRemoveFromCart = (productId) => {
         removeFromCart(productId);
+        setIsSnackbarOpen(true);
+      };
+
+      const handleSnackbarClose = () => {
+        setIsSnackbarOpen(false);
       };
    
     const handleChange = (event) => {
@@ -38,6 +44,13 @@ const CartedRowData = ({product}) => {
             <DeleteIcon />
         </IconButton>
        </Box>
+       <Snackbar
+            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+            open={isSnackbarOpen}
+            autoHideDuration={2000}
+            onClose={handleSnackbarClose}
+            message="Item Removed From Cart!"
+         />
     </Box>
   )
 }
