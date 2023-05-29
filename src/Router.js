@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Shop  from "./pages/Shop";
 import React from 'react';
 import SingleProduct from "./pages/SingleProduct";
+import Cart from './pages/Cart';
 
 const Router = () => {
   return (
@@ -14,7 +15,7 @@ const Router = () => {
           <Route path="shop" element={<Shop />} />
           <Route path="singleProduct/:productId" element={<SingleProduct />} />
           {/* <Route path="myAccount" element={<MyAccount />} /> */}
-          {/* <Route path="cart" element={<Cart />} /> */}
+          <Route path="cart" element={<Cart />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Route>
       </Routes>

@@ -30,7 +30,16 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+  const updateQuantity = (productId,quantity)=>{
+    setCartItems((prevCartItems)=>
+    prevCartItems.map(item=>{
+    if(item.id===productId)return{...item,quantity}
+    return item;
+  })
 
+  );
+
+}
   // Calculate subtotal for each item
   const calculateSubtotal = (item) => {
     return item.price * item.quantity;
@@ -47,7 +56,7 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, calculateTotal }}
+      value={{ cartItems, addToCart, removeFromCart, calculateTotal,calculateSubtotal,updateQuantity }}
     >
       {children}
     </CartContext.Provider>
