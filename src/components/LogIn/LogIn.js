@@ -27,10 +27,10 @@ const LogIn = () => {
   const handleLogIn= async(e)=>{
     e.preventDefault();
     if(!email){
-     return setError({...error,emailError:'Please enter your email'});
+      setError((prev)=>({...prev,emailError:'Please enter your email'}));
       
     }if(!password){
-     return setError({...error,passwordError:'Please enter your password'});
+     return setError((prev)=>({...prev,passwordError:'Please enter your password'}));
      
     }
     if (email && password) {

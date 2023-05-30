@@ -28,6 +28,9 @@ const Account = () => {
 
       const handleSubmit= (e)=>{
         e.preventDefault();
+        if(password || passwordConfirm===''){
+          return setError('Please enter your password');
+        }
         if(password!==passwordConfirm){
            return setError('Passwords do not match');
         }
