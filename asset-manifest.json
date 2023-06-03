@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.be4e4486.css",
+    "main.js": "/static/js/main.6a6fe550.js",
+    "static/js/787.ec704a7a.chunk.js": "/static/js/787.ec704a7a.chunk.js",
+    "static/media/Rectangle1.png": "/static/media/Rectangle1.c500631be3d74486e777.png",
+    "static/media/Asgaard-sofa1.png": "/static/media/Asgaard-sofa1.cc46edf3e5dfb861745b.png",
+    "static/media/Rocket-single-seater1.png": "/static/media/Rocket-single-seater1.7a64213ee07dd5e91159.png",
+    "static/media/Rectangle17.png": "/static/media/Rectangle17.2a982aeff5661f495fad.png",
+    "static/media/Cloud-sofa-three-seater-ottoman_31.png": "/static/media/Cloud-sofa-three-seater-ottoman_31.3dc26d9f6048d87b4b64.png",
+    "static/media/ottoman_21.png": "/static/media/ottoman_21.eee3edb2611911398936.png",
+    "static/media/Granite-square-side-table1.png": "/static/media/Granite-square-side-table1.3b8242ce179d5a9a652f.png",
+    "static/media/ottoman_11.png": "/static/media/ottoman_11.20ef4c0fe29580824f43.png",
+    "index.html": "/index.html",
+    "main.be4e4486.css.map": "/static/css/main.be4e4486.css.map",
+    "main.6a6fe550.js.map": "/static/js/main.6a6fe550.js.map",
+    "787.ec704a7a.chunk.js.map": "/static/js/787.ec704a7a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be4e4486.css",
+    "static/js/main.6a6fe550.js"
+  ]
+}
