@@ -17,8 +17,11 @@ const CartedRowData = ({product}) => {
       };
 
     const handleRemoveFromCart = (productId) => {
-        removeFromCart(productId);
         setIsSnackbarOpen(true);
+        setTimeout(() => {
+          removeFromCart(productId);
+        }, 250);
+        
       };
 
       const handleSnackbarClose = () => {

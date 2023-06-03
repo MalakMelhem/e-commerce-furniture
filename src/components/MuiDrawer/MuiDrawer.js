@@ -31,11 +31,11 @@ const MuiDrawer = () => {
             <Drawer anchor='left' open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
                 <Box component="div" className={style.navlink} p={2} pl={4} width='250px' textAlign="left" >
                     <NavLink to="/"><HomeOutlinedIcon className={style.navIcon} />Home</NavLink>
-                    <NavLink to="/"><StorefrontOutlinedIcon className={style.navIcon} />Shop</NavLink>
+                    <NavLink to="/shop"><StorefrontOutlinedIcon className={style.navIcon} />Shop</NavLink>
                     <NavLink to="/"><InfoOutlinedIcon className={style.navIcon}/>About</NavLink>
                     <NavLink to="/"><CallOutlinedIcon className={style.navIcon}/>Contact</NavLink>
-                    <NavLink to="/"><PersonOutlineOutlinedIcon className={style.navIcon}/>My Account</NavLink>
-                    <NavLink to="/"><ShoppingCartOutlinedIcon className={style.navIcon}/>Cart</NavLink>
+                    <NavLink to="/my-account"><PersonOutlineOutlinedIcon className={style.navIcon}/>My Account</NavLink>
+                    <NavLink to="/cart"><ShoppingCartOutlinedIcon className={style.navIcon}/>Cart</NavLink>
                 </Box>
 
             </Drawer>

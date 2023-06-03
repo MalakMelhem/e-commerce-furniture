@@ -13,7 +13,7 @@ const SingleProduct = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://run.mocky.io/v3/0f3de519-2fb6-48e5-afc4-04bd44953a2b'); 
+        const response = await fetch('https://run.mocky.io/v3/bbe6ae4e-7fdb-49bd-8318-f6f4be02de2c'); 
         const jsonData = await response.json();
         setData(jsonData);
     
@@ -29,7 +29,10 @@ const SingleProduct = () => {
     fetchData();
   }, [productId]);
 
-  
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
   <>

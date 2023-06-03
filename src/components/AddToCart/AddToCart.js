@@ -15,8 +15,7 @@ const AddToCart = ({product,quantity,setQuantity}) => {
         if(quantity==0)return;
         addToCart(product,quantity);
         setIsSnackbarOpen(true);
-        setQuantity(0);
-        
+        setQuantity(1);
       };
     
       const handleSnackbarClose = () => {
@@ -29,7 +28,7 @@ const AddToCart = ({product,quantity,setQuantity}) => {
          <Snackbar
             anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
             open={isSnackbarOpen}
-            autoHideDuration={2000}
+            autoHideDuration={1000}
             onClose={handleSnackbarClose}
             message="Item added to cart!"
          />
