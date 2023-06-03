@@ -1,11 +1,10 @@
 import React from 'react';
-import img from './furImg/Trenton-modular-sofa_31.png';
 import style from './FurnitureCard.module.css';
 import { Box } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import {useNavigate} from "react-router-dom";
 
-//the image's src as well will be added to the prop
+
 const FurnitureCard = ({id,name,price,items}) => {
   const navigate = useNavigate();
   return (

@@ -8,7 +8,7 @@ import Skeleton from '@mui/material/Skeleton';
 const ProductTopNav = () => {
   const product=useContext(productContext);
   return (
-    <Box className={style.productTopNav}><Link to="/">Home</Link><span> &gt; </span><Link to="shop">Shop</Link><span> &gt; </span><p>{product? product.name:<TopNavSkeleton />}</p></Box>
+    <Box className={style.productTopNav}><Link to="/">Home</Link><span> &gt; </span><Link to="/shop">Shop</Link><span> &gt; </span><p>{product? product.name:<TopNavSkeleton />}</p></Box>
   );
 }
 export default ProductTopNav;

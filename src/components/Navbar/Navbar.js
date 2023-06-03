@@ -41,7 +41,7 @@ function PrimarySearchAppBar() {
                             aria-controls='primary-search-account-menu'
                             aria-haspopup="true"
                             color="inherit"
-                            onClick={()=>navigate("/")}
+                            onClick={()=>navigate("/my-account")}
                         >
                             <PersonOutlineOutlinedIcon />
                         </IconButton>

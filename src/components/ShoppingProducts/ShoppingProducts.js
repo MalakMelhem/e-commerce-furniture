@@ -13,6 +13,7 @@ export const viewContext = createContext();
 
 const ShoppingProducts = () => {
   const [data, setData] = useState([]);
+  const [products,setProducts]=useState([]);
   const [page, setPage] = useState(1); // Current page
   const itemsPerPage = 12; // Number of items per page
   const totalPages = Math.ceil(data.length / itemsPerPage);
@@ -32,9 +33,10 @@ const ShoppingProducts = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://run.mocky.io/v3/41c31119-7cc8-4842-827f-f6a50fbe2cf5'); 
+        const response = await fetch('https://run.mocky.io/v3/bbe6ae4e-7fdb-49bd-8318-f6f4be02de2c'); 
         const jsonData = await response.json();
         setData(jsonData);
+        setProducts(jsonData);
         setIsLoading(false);
       } catch (error) {
         console.log('Error fetching data:', error);
@@ -47,7 +49,7 @@ const ShoppingProducts = () => {
     <Box>
        <dataContext.Provider value={[data, setData]}>
         <viewContext.Provider value={[isViewSolo,setIsViewSolo]}>
-        <FilterBar />
+        <FilterBar products={products}/>
         </viewContext.Provider>
         </dataContext.Provider>
         <ProductsContainer paginatedData={paginatedData} isViewSolo={isViewSolo} isLoading={isLoading}/>

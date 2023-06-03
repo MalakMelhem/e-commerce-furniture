@@ -10,8 +10,11 @@ const CartedProduct = ({product}) => {
   const [isSnackbarOpen, setIsSnackbarOpen] = useState(false);
 
   const handleRemoveFromCart = (productId) => {
-    removeFromCart(productId);
     setIsSnackbarOpen(true);
+    setTimeout(() => {
+      removeFromCart(productId);
+    }, 250);
+   
   };
 
   const handleSnackbarClose = () => {

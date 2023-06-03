@@ -5,13 +5,16 @@ import FurnitureCard from '../FurnitureCard/FurnitureCard';
 import SectionHeading from '../SectionHeading/SectionHeading';
 import { Box } from '@mui/material';
 import { useState,useEffect } from 'react';
+import SkeletonProduct from '../SkeletonProduct/SkeletonProduct';
+
 const TopProducts = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [products, setProducts] = useState(null);
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://run.mocky.io/v3/41c31119-7cc8-4842-827f-f6a50fbe2cf5'); 
+        const response = await fetch('https://run.mocky.io/v3/bbe6ae4e-7fdb-49bd-8318-f6f4be02de2c'); 
         const jsonData = await response.json();
         setProducts(jsonData);
       } catch (error) {
@@ -36,11 +39,18 @@ const TopProducts = () => {
 
         {isExpanded ? (
           <> 
-          {products? products.map(product=>(<FurnitureCard key={product.id} {...product} />)):<p>Loading...</p> }
+          {products? products.slice(0, 8).map(product=>(<FurnitureCard key={product.id} {...product} />))
+          :
+           
+           Array.from({ length: 8 }, (index) => ( <SkeletonProduct key={index} />))
+          }
           </>
         ) : (
           <>
-            {products? products.slice(0, 4).map(product=>(<FurnitureCard key={product.id} {...product} />)):<p>Loading...</p> }
+            {products? products.slice(0, 4).map(product=>(<FurnitureCard key={product.id} {...product} />))
+            :
+            Array.from({ length: 4 }, (index) => ( <SkeletonProduct key={index} />))
+            }
           </>
         )}
       </Box>

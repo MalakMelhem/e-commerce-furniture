@@ -15,15 +15,15 @@ import { Box } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 
-const FilterBar = () => {
+const FilterBar = ({products}) => {
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const [data, setData] = useContext(dataContext);
-  const dataLimited=[...data];
+  const [filteredData,setFilteredData]=useState(null);
   const [limit,setLimit]=useState(30);
   const [isViewSolo,setIsViewSolo]=useContext(viewContext);
-  
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -36,7 +36,7 @@ const FilterBar = () => {
   };
   
 const handleLimiting=(event)=>{
-  setData(dataLimited.slice(0, event.target.value));
+  setData(filteredData.slice(0, event.target.value));
 }
 
 const handleToggle = (value) => {
@@ -49,7 +49,7 @@ const handleToggle = (value) => {
           <Box className={style.iconsBtn}> 
             <IconButton onClick={handleClick}><TuneIcon className={style.icon}/><h4>Filter</h4></IconButton>
             <Menu id="basic-menu" className={classes.menu} anchorEl={anchorEl} open={open} onClose={handleClose} MenuListProps={{'aria-labelledby': 'basic-button', }}>
-              <FilterMenu />
+              <FilterMenu setFilteredData={setFilteredData} products={products}/>
             </Menu>
             <Tooltip title="View grid"><IconButton onClick={()=>handleToggle(false)}><GridViewRoundedIcon className={style.icon}/></IconButton></Tooltip>
             <Tooltip title="View List"><IconButton onClick={()=>handleToggle(true)}><ViewDayOutlinedIcon className={style.icon}/></IconButton></Tooltip>

@@ -12,7 +12,7 @@ import Skeleton from '@mui/material/Skeleton';
 
 const AsideDesc = () => {
   const product=useContext(productContext);
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
    
   return (

@@ -11,10 +11,10 @@ import InputLabel from '@mui/material/InputLabel';
 import useStyles from './FilterMenuStyle';
 import {dataContext} from '../ShoppingProducts/ShoppingProducts';
 
-const availableCategories = ['chair', 'armchair', 'table','Pouffe','nightstand','ottoman','sofa','sideboard'];
+const availableCategories = ['chair', 'armchair', 'table','pouffe','nightstand','ottoman','sofa','sideboard'];
 const availableTags = ['trend','wood','brown','office','straw','red','yellow','handmade','storage','rattan','new','white','birch','tallmyra','gray','outdoor','livingroom','gunnared','beige','knisa','cover','katorp','natural','walnut','veneer','blue','glass','green','bench'];
 
-export default function FilterMenu() {
+export default function FilterMenu({setFilteredData,products}) {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedTags, setSelectedTags] = useState([]);
   const [data, setData] = useContext(dataContext);
@@ -36,16 +36,17 @@ export default function FilterMenu() {
   const handleFilter = () => {
     // Perform filtering logic based on selectedCategory and selectedTags
      // Filtering logic
-     const filteredProducts = data.filter(product => {
+     const filteredProducts = products.filter(product => {
       // Check if the selected category matches
       const isCategoryMatch = selectedCategory === '' || product.category === selectedCategory;
       // Check if at least one selected tag matches
       const isTagMatch = selectedTags.length === 0 || selectedTags.some(tag => product.tags.includes(tag));
       return isCategoryMatch && isTagMatch;
     });
-
+    
     // Process the filtered products as needed
     setData(filteredProducts);
+    setFilteredData(filteredProducts);
   };
   
   const classes = useStyles();
