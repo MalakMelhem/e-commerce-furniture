@@ -36,6 +36,7 @@
 @media only screen and (max-width: 818px) {
     .notFound {
       flex-direction: column;
+      padding: 2em;
     }
     .notFound .desc{
         width: 100%;

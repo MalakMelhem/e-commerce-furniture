@@ -5,6 +5,7 @@
     height: 70%;
     width: 40%;
     margin-left: 5em;
+    margin-right: 1em;
 }
 .productImages .asideImages{
     /* height: 416px; */
@@ -71,7 +72,9 @@
 
   @media only screen and (max-width: 844px) {
     .productImages{
+        margin-left: 3em;
         width: 90%;
+        justify-content: center;
     }
     .productImages .mainImage{
         width: 70%;
@@ -83,6 +86,15 @@
   }
   .asideImageSkeleton, .mainImageSkeleton{
     border-radius: 10px;
+  }
+  @media only screen and (max-width: 602px) {
+    .productImages .mainImage{
+        width: 80%;
+    }
+    .productImages .asideImages{
+        width: 20%;
+    }
+
   }
   
 

@@ -3,10 +3,13 @@
 }
 .relatedProducts .container{
      display: flex;
-     /* justify-content: space-between; */
      flex-wrap: wrap;
 }
-
+@media only screen and (max-width: 1316px) {
+    .relatedProducts .container{
+        justify-content:center;
+  }
+}
 .relatedProducts .tail{
     width: fit-content;
     margin: auto;
