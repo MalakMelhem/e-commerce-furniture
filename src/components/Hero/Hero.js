@@ -5,6 +5,7 @@ import CoreLinkBtn from '../CoreLinkBtn/CoreLinkBtn';
 import { Box } from '@mui/material';
 import Typography from '@mui/material/Typography';
 
+
 const Hero = () => {
   return (
     <Box className={style.hero}>

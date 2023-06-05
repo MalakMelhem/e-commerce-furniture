@@ -6,6 +6,8 @@
 @media only screen and (max-width: 984px) {
     .cartAsideDetails{
       width: 60%;
+      height: auto;
+      padding: 1em;
     }
   }
 .cartAsideDetails h2{
