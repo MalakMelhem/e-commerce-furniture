@@ -5,6 +5,8 @@ import img1 from './rpImg/Granite-square-side-table1.png';
 import img2 from './rpImg/Cloud-sofa-three-seater-ottoman_31.png';
 import { Box } from '@mui/material';
 import Typography from '@mui/material/Typography';
+
+
 const RandomProducts = () => {
   return (
     <Box className={style.rpContainer}>

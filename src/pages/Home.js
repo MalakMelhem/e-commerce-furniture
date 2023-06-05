@@ -5,17 +5,19 @@ import TopProducts from '../components/TopProducts/TopProducts';
 import NewArrivals from '../components/NewArrivals/NewArrivals';
 import Blogs from '../components/Blogs/Blogs';
 import ContactBanner from '../components/ContactBanner/ContactBanner';
+import { Box } from '@mui/material';
+
 const Home = () => {
   return (
-    <div>
+    <Box>
       <Hero />
       <RandomProducts />
       <TopProducts />
       <NewArrivals />
       <Blogs />
       <ContactBanner />
-    </div>
-  )
+    </Box>
+  );
 }
 
 export default Home
