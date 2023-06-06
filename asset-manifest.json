@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/e-commerce-furniture/static/css/main.042ad818.css",
-    "main.js": "/e-commerce-furniture/static/js/main.8c0fedb1.js",
+    "main.js": "/e-commerce-furniture/static/js/main.a70630cf.js",
     "static/js/787.ec704a7a.chunk.js": "/e-commerce-furniture/static/js/787.ec704a7a.chunk.js",
     "static/media/Rectangle1.png": "/e-commerce-furniture/static/media/Rectangle1.c500631be3d74486e777.png",
     "static/media/Asgaard-sofa1.png": "/e-commerce-furniture/static/media/Asgaard-sofa1.cc46edf3e5dfb861745b.png",
@@ -13,11 +13,11 @@
     "static/media/ottoman_11.png": "/e-commerce-furniture/static/media/ottoman_11.20ef4c0fe29580824f43.png",
     "index.html": "/e-commerce-furniture/index.html",
     "main.042ad818.css.map": "/e-commerce-furniture/static/css/main.042ad818.css.map",
-    "main.8c0fedb1.js.map": "/e-commerce-furniture/static/js/main.8c0fedb1.js.map",
+    "main.a70630cf.js.map": "/e-commerce-furniture/static/js/main.a70630cf.js.map",
     "787.ec704a7a.chunk.js.map": "/e-commerce-furniture/static/js/787.ec704a7a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.042ad818.css",
-    "static/js/main.8c0fedb1.js"
+    "static/js/main.a70630cf.js"
   ]
 }
