@@ -20,7 +20,7 @@ const Router = () => {
           <Route path="my-account" element={<MyAccount />} />
           <Route path="cart" element={<Cart />} />
           <Route path="lost-password" element={<LostPassword />} />
-          {/* <Route path="*" element={<NoPage />} /> */}
+          <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
