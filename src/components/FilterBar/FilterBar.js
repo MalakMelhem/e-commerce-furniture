@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import style from './FilterBar.module.css';
 import TuneIcon from '@mui/icons-material/Tune';
 import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
@@ -20,7 +20,7 @@ const FilterBar = ({products}) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const [data, setData] = useContext(dataContext);
-  const [filteredData,setFilteredData]=useState(null);
+  const [filteredData,setFilteredData]=useState([]);
   const [limit,setLimit]=useState(30);
   const [isViewSolo,setIsViewSolo]=useContext(viewContext);
 
@@ -42,6 +42,14 @@ const handleLimiting=(event)=>{
 const handleToggle = (value) => {
   setIsViewSolo(value);
 };
+
+
+useEffect(() => {
+ setFilteredData([...products]);
+ console.log(filteredData);
+}, [products]);
+
+
   const classes = useStyles();
   return (
     <Box className={style.filterBar}>
