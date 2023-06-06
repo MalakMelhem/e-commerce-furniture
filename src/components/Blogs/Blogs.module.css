@@ -1,6 +1,8 @@
 .blogs{
     padding-top: 3em;
     padding-bottom: 3em;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 .blogs .content{
     margin-top: 3em;
