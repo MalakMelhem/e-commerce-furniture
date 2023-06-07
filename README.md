@@ -1,4 +1,28 @@
-# Getting Started with Create React App
+# Furniture E-Commerce Website
+
+This is a simple E-commerce website that utilizes React fundamentals.
+
+## The Website
+Consists of :
+- Home page
+- Shop page
+- Single page product
+- Cart page
+- My account page
+- Reset password page
+- Not found page
+
+
+In the home page user can navigate and view some of the products in the top products section. In the shop page user view all the products and filters the products by categories and tags, sorts the products based on the price or the rating ascending or descending, user can limit how much to see from the products. When the user clicks on the product card it navigates to the single product details, user can select the quantity he/she desires and add them to the cart then it sends a notification that the item was added to the cart list, in the same page, he can view related products from the same category. In the navbar via the cart icon user can click and view the cart sidebar and delete any product, or navigate to the cart page there also can delete any product or update the quantities that were selected. In my account page user can register or log in if he/she's already registered, or reset his/her password, if the user is logged in it views the user's dashboard email and password, where he can update them at any time. 
+
+
+ Utilizes :
+- Firebase authentication
+- Material UI kit, along with media Query basics 
+- JSON Server as the Backend Integration
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
