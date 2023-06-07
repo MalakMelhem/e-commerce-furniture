@@ -13,6 +13,9 @@ const CartedRowData = ({product}) => {
     const [isSnackbarOpen, setIsSnackbarOpen] = useState(false);
 
     const handleQuantityChange = (productId,quantity) => {
+        if (quantity==0){
+          handleRemoveFromCart(productId);
+        }
         updateQuantity(productId,quantity);
       };
 
