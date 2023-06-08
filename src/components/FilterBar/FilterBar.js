@@ -46,7 +46,6 @@ const handleToggle = (value) => {
 
 useEffect(() => {
  setFilteredData([...products]);
- console.log(filteredData);
 }, [products]);
 
 

@@ -25,7 +25,10 @@ export default function BasicSelect() {
       sortedProducts.sort((a, b) => b.price - a.price);
     }else if(event.target.value ==='rating-high-to-low'){
       sortedProducts.sort((a, b) => b.rating - a.rating);
+    }else if(event.target.value ==='rating-low-to-high'){
+      sortedProducts.sort((a, b) => a.rating - b.rating);
     }
+    
     setData(sortedProducts);
     
   };
